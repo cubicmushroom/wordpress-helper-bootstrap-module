@@ -50,7 +50,11 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
             );
         }
 
-
+        /**
+         * Checks if CSS & JS files need queueing
+         *
+         * @return void
+         */
         public function enqueue_files() {
             if ( $this->load_css ) {
                 add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_css' ) );
