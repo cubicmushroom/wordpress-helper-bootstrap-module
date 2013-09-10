@@ -28,17 +28,29 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
          * Adds action hook to check if further action hooks are required
          */
         public function __construct() {
+        }
+
+        /**
+         * Initialises module
+         *
+         * This is used rather than the constructor to the module to be configured
+         * before it's initialised
+         * 
+         * @return void
+         */
+        public function initialise() {
+
             add_action( 'init', array( $this, 'enqueue_files' ) );
 
             wp_register_style(
                 self::CSS_HANDLE,
-                get_stylesheet_directory_uri() . self::CSS_MIN_FILE
+                $this->uri . self::CSS_MIN_FILE
             );
             wp_register_script(
                 self::JS_HANDLE,
-                get_stylesheet_directory_uri() . self::JS_MIN_FILE,
+                $this->uri . self::JS_MIN_FILE,
                 array( 'jquery' ),
-                false
+                false,
                 true
             );
         }
