@@ -25,7 +25,8 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
         protected $load_js = false;
 
         /**
-         * Initialises module
+         * Initialises module - automatically called after module is instantiated &
+         * configured
          *
          * This is used rather than the constructor to the module to be configured
          * before it's initialised
