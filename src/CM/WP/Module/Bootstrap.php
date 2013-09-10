@@ -4,8 +4,8 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
 
     class CM_WP_Module_Bootstrap extends CM_WP_Module {
 
-        const CSS_HANDLE = 'cm-wph-module-bootstrap';
-        const JS_HANDLE  = 'cm-wph-module-bootstrap';
+        const CSS_HANDLE = 'bootstrap';
+        const JS_HANDLE  = 'bootstrap';
 
         const CSS_MIN_FILE = 'vendor/twitter/bootstrap/dist/css/bootstrap.min.css';
         const JS_MIN_FILE  = 'vendor/twitter/bootstrap/dist/js/bootstrap.min.js';
