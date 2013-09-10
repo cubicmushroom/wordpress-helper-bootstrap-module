@@ -25,12 +25,6 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
         protected $load_js = false;
 
         /**
-         * Adds action hook to check if further action hooks are required
-         */
-        public function __construct() {
-        }
-
-        /**
          * Initialises module
          *
          * This is used rather than the constructor to the module to be configured
