@@ -1,0 +1,25 @@
+{
+    "name": "cubicmushroom/wordpress-helper-bootstrap-module",
+    "description": "Module for adding Twitter Bootstrap functionality",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Toby Griffiths",
+            "email": "toby@cubicmushroom.co.uk"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/CubicMushroom/wordpress-helper.git"
+        }
+    ],
+    "require": {
+        "cubicmushroom/wordpress-helper" : "dev-master",
+        "twitter/bootstrap"              : "v3.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*@dev"
+    }
+}
+
