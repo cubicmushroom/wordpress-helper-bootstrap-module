@@ -60,7 +60,7 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
                 add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_css' ) );
             }
             if ( $this->load_js ) {
-                wp_enqueue_style( self::JS_HANDLE );
+                wp_enqueue_script( self::JS_HANDLE );
             }
         }
         
