@@ -15,8 +15,7 @@
         }
     ],
     "require": {
-        "cubicmushroom/wordpress-helper" : "dev-master",
-        "twitter/bootstrap"              : "v3.0.0"
+        "cubicmushroom/wordpress-helper" : "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*@dev"

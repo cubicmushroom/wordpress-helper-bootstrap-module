@@ -4,11 +4,11 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
 
     class CM_WP_Module_Bootstrap extends CM_WP_Module {
 
-        const CSS_HANDLE = 'bootstrap';
-        const JS_HANDLE  = 'bootstrap';
+        const CSS_HANDLE = 'cm_bootstrap';
+        const JS_HANDLE  = 'cm_bootstrap';
 
-        const CSS_MIN_FILE = 'vendor/twitter/bootstrap/dist/css/bootstrap.min.css';
-        const JS_MIN_FILE  = 'vendor/twitter/bootstrap/dist/js/bootstrap.min.js';
+        const CSS_MIN_FILE = 'vendor/cubicmushroom/wordpress-helper-bootstrap-module/assets/css/bootstrap.min.css';
+        const JS_MIN_FILE  = 'vendor/cubicmushroom/wordpress-helper-bootstrap-module/assets/js/bootstrap.min.js';
 
         /**
          * Flag to indicate whether to load the bootstrap css file
@@ -57,10 +57,18 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
          */
         public function enqueue_files() {
             if ( $this->load_css ) {
-                add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_css' ) );
+                if ( ! is_admin() ) {
+                    add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_css' ) );
+                } else {
+                    add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_css' ) );
+                }
             }
             if ( $this->load_js ) {
-                wp_enqueue_script( self::JS_HANDLE );
+                if ( ! is_admin() ) {
+                    wp_enqueue_script( self::JS_HANDLE );
+                } else {
+
+                }
             }
         }
         
