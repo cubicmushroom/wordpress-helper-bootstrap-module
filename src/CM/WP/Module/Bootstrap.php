@@ -37,18 +37,28 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
 
             add_action( 'init', array( $this, 'enqueue_files' ) );
 
-            wp_register_style(
-                self::CSS_HANDLE,
-                $this->uri . self::CSS_MIN_FILE
-            );
-            wp_register_script(
-                self::JS_HANDLE,
-                $this->uri . self::JS_MIN_FILE,
-                array( 'jquery' ),
-                false,
-                true
-            );
+	        add_action( 'wp_enqueue_scripts', array( $this, 'register_styles_and_scripts' ) );
+
         }
+
+	    /**
+	     * Registers CSS styles & JS scripts
+	     *
+	     * @return void
+	     */
+	    public function register_styles_and_scripts() {
+		    wp_register_style(
+			    self::CSS_HANDLE,
+			    $this->uri . self::CSS_MIN_FILE
+		    );
+		    wp_register_script(
+			    self::JS_HANDLE,
+			    $this->uri . self::JS_MIN_FILE,
+			    array( 'jquery' ),
+			    false,
+			    true
+		    );
+	    }
 
         /**
          * Checks if CSS & JS files need queueing
@@ -114,5 +124,7 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
         public function enqueue_js() {
             wp_enqueue_script( self::JS_HANDLE );
         }
+
+
     }
 }
