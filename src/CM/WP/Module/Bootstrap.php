@@ -94,8 +94,9 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
             foreach ( $elements as $element ) {
                 switch ( $element ) {
                     case 'css':
+                        $this->load_css = true;
                     case 'js':
-                        $this->{"load_$element"} = true;
+                        $this->load_js = true;
                         break;
                     default:
                         throw new InvalidArgumentException(
