@@ -35,10 +35,8 @@ if (!class_exists('CM_WP_Module_Bootstrap')) {
          */
         public function initialise() {
 
-            add_action( 'init', array( $this, 'enqueue_files' ) );
-
-	        add_action( 'wp_enqueue_scripts', array( $this, 'register_styles_and_scripts' ) );
-
+	        add_action( 'init', array( $this, 'register_styles_and_scripts' ), 9 );
+	        add_action( 'init', array( $this, 'enqueue_files' ), 10 );
         }
 
 	    /**
